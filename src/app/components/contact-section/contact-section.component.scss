@@ -3,12 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 8rem 0 3rem;
+  margin: 8rem 1rem 3rem;
 
   h1 {
     font-family: "Julius";
     font-weight: lighter;
-    font-size: clamp(1.6rem, 3vw, 3.5rem);
+    font-size: clamp(1.2rem, 6vw, 3rem);
     margin-bottom: 2rem;
   }
 
@@ -16,16 +16,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(250px, 20vw, 350px);
-    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    width: clamp(200px, 20vw, 350px);
+    font-size: clamp(0.7rem, 1.4vw, 1.1rem);
     border: 1px solid var(--primary);
     color: var(--primary);
     text-decoration: none;
-    padding: 0.7rem 1.3rem;
+    padding:clamp(0.4rem, 1vw, 0.7rem) clamp(0.7rem, 1.4vw, 1.2rem);
     text-transform: uppercase;
     margin-bottom: 1rem;
     cursor: pointer;
     transition: 0.3s all ease;
+
+    img {
+      width: clamp(1rem, 1.5vw, 1.3rem) !important;
+    }
 
     &:hover {
       color: var(--off-white);
@@ -79,7 +83,7 @@
   }
 
   .text {
-    font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+    font-size: clamp(0.7rem, 2.5vw, 1.2rem);
     margin: 1rem 0 0.5rem;
   }
 
@@ -88,8 +92,7 @@
     color: var(--secondary);
     text-decoration: underline;
     cursor: pointer;
-    font-size: 1.1rem;
-    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
     font-family: "Barlow-light";
   }
 }

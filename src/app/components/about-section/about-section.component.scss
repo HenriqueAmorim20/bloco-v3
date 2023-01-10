@@ -68,7 +68,6 @@
       width: 50%;
       padding: clamp(2rem, 4vw, 4rem);
       h2 {
-        font-size: 2rem;
         font-size: clamp(1.5rem, 2.5vw, 3rem);
         margin-bottom: 1.5rem;
       }
@@ -97,5 +96,75 @@
         width: 100%;
       }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  #aboutSection {
+    margin: 4rem 0 0;
+
+    h1 {
+      position: relative;
+      transform: translate(-70%, 5%);
+      font-size: clamp(2.5rem, 12vw, 6rem);
+
+      b {
+        position: absolute;
+        width: fit-content;
+        white-space: nowrap;
+        transform: translateY(100%);
+      }
+    }
+    .upper {
+      position: relative;
+      width: 100%;
+      display: block;
+
+      .museu {
+        width: 100%;
+        aspect-ratio: 1;
+        background-position: center;
+      }
+
+      .texts {
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        bottom: 5vw;
+        left: 0;
+
+        p {
+          width: 90%;
+          text-align: start;
+          color: var(--off-white);
+          font-size: clamp(0.8rem, 4vw, 2.7rem);
+        }
+      }
+    }
+
+    .lower {
+      flex-direction: column;
+      .biblioteca {
+        width: 90%;
+      }
+
+      .texts {
+        width: 90%;
+        padding: 2rem 0;
+
+        h2 {
+          font-size: clamp(1.5rem, 7vw, 2.7rem);
+        }
+
+        p {
+          width: 100%;
+          color: var(--primary);
+          font-size: clamp(0.8rem, 4vw, 1.7rem);
+        }
+      }
+    }
+
   }
 }
