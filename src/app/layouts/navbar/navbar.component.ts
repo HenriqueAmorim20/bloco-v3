@@ -33,6 +33,11 @@ export class NavbarComponent {
       path: "/catalogo",
     },
     {
+      name: "sobre",
+      id: "aboutSection",
+      path: "/",
+    },
+    {
       name: "contato",
       id: "contactSection",
       path: "/",

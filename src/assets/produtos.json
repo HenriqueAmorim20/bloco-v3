@@ -1,0 +1,44 @@
+{
+ "produtos": [
+  {
+   "id": 0,
+   "name": "UnB",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/1.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": true
+  },
+  {
+   "id": 1,
+   "name": "Modernismo",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/2.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": true
+  },
+  {
+   "id": 2,
+   "name": "Plano Piloto",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/3.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": true
+  },
+  {
+   "id": 3,
+   "name": "Esplanada",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/4.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": true
+  }
+ ]
+}

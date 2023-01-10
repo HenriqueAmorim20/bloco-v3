@@ -1,14 +1,14 @@
 <div id="catalogSection">
   <h1>CATÁLOGO</h1>
   <div class="products">
-    <div class="product" *ngFor="let item of catalogItems; index as i">
-      <div class="img" [style.background]="getUrl(item.imgUrl)"></div>
+    <div class="product" *ngFor="let item of products; index as i">
+      <div class="img" [style.background]="getUrl(item.coverUrl)"></div>
       <div class="desc">
         <span>{{ item.name }}</span>
         <img class="icon" src="/assets/icons/arrow-long-right.svg" width="15" />
         <span>R$ {{ item.price }}</span>
       </div>
     </div>
-    <div class="more">veja mais</div>
+    <div class="more" [routerLink]="['/catalogo']" routerLinkActive="router-link-active" >veja mais</div>
   </div>
 </div>

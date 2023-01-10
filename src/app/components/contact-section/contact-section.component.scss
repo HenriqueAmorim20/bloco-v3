@@ -19,6 +19,8 @@
     width: clamp(250px, 20vw, 350px);
     font-size: clamp(0.8rem, 1.2vw, 1.2rem);
     border: 1px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
     padding: 0.7rem 1.3rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
