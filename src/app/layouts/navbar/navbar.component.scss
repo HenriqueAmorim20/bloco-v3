@@ -1,0 +1,75 @@
+.navbar {
+  .navbar-logo {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 3;
+    font-family: "Alata";
+    font-size: 3.5rem;
+    color: var(--primary);
+  }
+  .menu-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 3;
+
+    .menu-icon-bar {
+      height: 3px;
+      width: 35px;
+      background-color: var(--primary);
+      display: block;
+      margin: 8px 0px;
+      transition: transform 0.5s, opacity 0.5s ease-in-out;
+      transform: none;
+    }
+
+    .first-bar-active {
+      transform: translateY(0.6rem) rotate(-45deg);
+    }
+    .second-bar-active {
+      transform: rotate(45deg);
+    }
+    .third-bar-active {
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--secondary-30);
+  backdrop-filter: blur(20px);
+  padding: 0 10%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+
+  .menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0rem 1.5rem;
+    color: var(--off-white);
+    font-family: "Julius";
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.drawer-active {
+  visibility: visible;
+  opacity: 1;
+}

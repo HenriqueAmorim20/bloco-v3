@@ -1,0 +1,81 @@
+#catalogSection {
+  // height: 100vh;
+  margin: 6rem 0 3rem;
+
+  h1 {
+    position: absolute;
+    transform: translateY(-70%);
+    font-family: "Julius";
+    font-weight: lighter;
+    color: var(--secondary-60);
+    letter-spacing: clamp(0.5rem, 1.5vw, 2.2rem);
+    font-size: clamp(3rem, 8vw, 12rem);
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.85fr;
+    gap: clamp(0.3rem, 0.75vw, 1rem);
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      .img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3.5/5;
+        background-size: cover !important;
+
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          background-color: var(--secondary-30);
+          inset: 0;
+          width: 100%;
+          opacity: 1;
+          transition: 0.5s all ease;
+        }
+      }
+
+      .desc {
+        display: flex;
+        align-items: center;
+        padding: 0.3rem 0.7rem;
+        font-size: clamp(0.8rem, 1.2vw, 1.6rem);
+
+        img {
+          transition: 0.5s all ease;
+          margin: 0.2rem auto 0 0.5rem;
+        }
+      }
+
+      &:hover .desc img {
+        transform: translateX(80%);
+      }
+
+      &:hover .img::before {
+        opacity: 0;
+      }
+    }
+
+    .more {
+      cursor: pointer;
+      margin: auto;
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      padding: clamp(1.5rem, 4vw, 4rem) clamp(1.1rem, 3vw, 3rem);
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-family: "Barlow-light";
+      font-size: clamp(0.6rem, 1vw, 1.2rem);
+      transition: 0.5s all ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

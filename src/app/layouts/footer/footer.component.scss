@@ -1,0 +1,34 @@
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0rem 5rem 1rem 3rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    h1 {
+      font-family: "Alata";
+      font-size: 3.5rem;
+      letter-spacing: -3px;
+      margin-right: 1rem;
+    }
+
+    #copy {
+      transform: translateY(40%);
+    }
+  }
+
+  .dev {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+    transform: translateY(30%);
+
+    img {
+      transform: translateY(15%);
+    }
+  }
+}

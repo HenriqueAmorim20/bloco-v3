@@ -1,0 +1,93 @@
+#contactSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8rem 0 3rem;
+
+  h1 {
+    font-family: "Julius";
+    font-weight: lighter;
+    font-size: clamp(1.6rem, 3vw, 3.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(250px, 20vw, 350px);
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    border: 1px solid var(--primary);
+    padding: 0.7rem 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.3s all ease;
+
+    &:hover {
+      color: var(--off-white);
+      background-color: var(--primary);
+
+      img {
+        filter: var(--filter-off-white);
+      }
+
+      .instagram {
+        visibility: hidden;
+        &::before {
+          visibility: visible;
+        }
+      }
+
+      .whatsapp {
+        visibility: hidden;
+        &::before {
+          visibility: visible;
+        }
+      }
+    }
+
+    .instagram {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: "@bloco.bsb";
+        visibility: hidden;
+      }
+    }
+
+    .whatsapp {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: "(61) 98527-0234";
+        visibility: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    img {
+      width: 1.4rem;
+    }
+  }
+
+  .text {
+    font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+    margin: 1rem 0 0.5rem;
+  }
+
+  button {
+    background-color: transparent;
+    color: var(--secondary);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+    font-family: "Barlow-light";
+  }
+}

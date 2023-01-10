@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Alata";
+  src: url("~/assets/fonts/Alata.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("~/assets/fonts/BarlowCondensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow-thin";
+  src: url("~/assets/fonts/BarlowCondensed-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow-light";
+  src: url("~/assets/fonts/BarlowCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Antic";
+  src: url("~/assets/fonts/AnticDidone.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Julius";
+  src: url("~/assets/fonts/JuliusSansOne.ttf") format("truetype");
+}
+
+:root {
+  --off-white: #faf9f6;
+  --off-white-70: #faf9f6b3;
+  --primary: #1f100a;
+  --secondary: #4d2719;
+  --secondary-60: hsla(16, 51%, 20%, 0.6);
+  --secondary-30: hsla(16, 51%, 20%, 0.3);
+  --filter-off-white: invert(100%) sepia(48%) saturate(1665%) hue-rotate(201deg)
+    brightness(129%) contrast(95%);
+}
+
+body {
+  font-family: "Barlow-light";
+  background-color: var(--off-white);
+  color: var(--primary);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}

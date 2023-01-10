@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <span class="navbar-logo">b</span>
+  <div class="menu-icon" (click)="toggleDrawer()">
+    <span class="menu-icon-bar"></span>
+    <span class="menu-icon-bar"></span>
+    <span class="menu-icon-bar"></span>
+  </div>
+</nav>
+
+<div class="drawer">
+  <div *ngFor="let menu of menuItems">
+    <span class="menu-item" (click)="goTo(menu)">
+      {{ menu.name }}
+    </span>
+  </div>
+</div>
