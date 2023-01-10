@@ -43,15 +43,12 @@
 
     .first-bar-active {
       transform: translateY(0.6rem) rotate(-45deg);
-      background-color: var(--off-white);
     }
     .second-bar-active {
       transform: rotate(45deg);
-      background-color: var(--off-white);
     }
     .third-bar-active {
       transform: rotate(45deg);
-      background-color: var(--off-white);
       opacity: 0;
     }
   }
