@@ -66,12 +66,14 @@ export class NavbarComponent {
 
   goTo(item: IMenuItems): void {
     this.toggleDrawer();
-    console.log(item.path);
     this.router.navigate([item.path]).then(() => {
       const element = document.getElementById(item.id);
       if (!element) return;
       const y = element?.getBoundingClientRect().top + window.pageYOffset - 10;
-      window.scrollTo({ top: y, behavior: "smooth" });
+
+      setTimeout(() => {
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }, 700);
     });
   }
 }

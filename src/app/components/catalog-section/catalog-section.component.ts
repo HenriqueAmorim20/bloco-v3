@@ -1,4 +1,4 @@
-import { IProducts } from './../../shared/interfaces/products';
+import { IProduct } from './../../shared/interfaces/products';
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import produtosJSON from '../../../assets/produtos.json'
 
@@ -9,7 +9,7 @@ import produtosJSON from '../../../assets/produtos.json'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogSectionComponent {
-  products: IProducts[] = produtosJSON.produtos.filter((produto) => {
+  products: IProduct[] = produtosJSON.produtos.filter((produto) => {
     return produto.catalogSection;
   });
 

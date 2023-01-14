@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ComponentsModule } from './components/components.module';
 import { CatalogComponent } from './pages/catalog/catalog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CatalogComponent],
@@ -15,6 +16,8 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
     AppRoutingModule,
     LayoutsModule,
     ComponentsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

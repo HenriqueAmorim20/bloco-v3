@@ -5,6 +5,7 @@
    "name": "UnB",
    "price": "85,90",
    "coverUrl": "/assets/images/catalog-section/1.png",
+   "backUrl": "/assets/images/catalog-section/2.png",
    "imgUrls": [
     ""
    ],
@@ -15,6 +16,7 @@
    "name": "Modernismo",
    "price": "85,90",
    "coverUrl": "/assets/images/catalog-section/2.png",
+   "backUrl": "/assets/images/catalog-section/1.png",
    "imgUrls": [
     ""
    ],
@@ -25,6 +27,7 @@
    "name": "Plano Piloto",
    "price": "85,90",
    "coverUrl": "/assets/images/catalog-section/3.png",
+   "backUrl": "/assets/images/catalog-section/2.png",
    "imgUrls": [
     ""
    ],
@@ -35,10 +38,77 @@
    "name": "Esplanada",
    "price": "85,90",
    "coverUrl": "/assets/images/catalog-section/4.png",
+   "backUrl": "/assets/images/catalog-section/3.png",
    "imgUrls": [
     ""
    ],
    "catalogSection": true
+  },
+  {
+   "id": 4,
+   "name": "Igrejinha",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/1.png",
+   "backUrl": "/assets/images/catalog-section/3.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
+  },
+  {
+   "id": 5,
+   "name": "Catedral",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/2.png",
+   "backUrl": "/assets/images/catalog-section/4.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
+  },
+  {
+   "id": 6,
+   "name": "Foguete",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/3.png",
+   "backUrl": "/assets/images/catalog-section/2.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
+  },
+  {
+   "id": 7,
+   "name": "Céu de Brasília",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/4.png",
+   "backUrl": "/assets/images/catalog-section/1.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
+  },
+  {
+   "id": 8,
+   "name": "Ipês",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/1.png",
+   "backUrl": "/assets/images/catalog-section/2.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
+  },
+  {
+   "id": 9,
+   "name": "Bloco",
+   "price": "85,90",
+   "coverUrl": "/assets/images/catalog-section/2.png",
+   "backUrl": "/assets/images/catalog-section/4.png",
+   "imgUrls": [
+    ""
+   ],
+   "catalogSection": false
   }
  ]
 }

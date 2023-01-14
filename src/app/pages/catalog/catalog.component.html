@@ -1,1 +1,33 @@
-<p>catalog works!</p>
+<div id="catalog">
+  <div class="title">
+    <h1>
+      CATÁLOGO
+    </h1>
+    <h2>Vista Brasília com a Bloco.</h2>
+  </div>
+  <div class="sort-bar">
+    <div class="search">
+      <img src="/assets/icons/search.svg" />
+      <input type="text" placeholder="Pesquise um produto..." (keyup)="filterBy($event)">
+    </div>
+    <div class="order">
+      <span>ordernar por: </span>
+      <select (change)="sortBy($event)">
+        <option *ngFor="let option of sortOptions" [value]="option.value">{{ option.label }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="products">
+    <div class="product" *ngFor="let item of products; index as i">
+      <img [id]="item.id" [src]="item.coverUrl" (mouseenter)="setUrl(item, item.backUrl)" (mouseleave)="setUrl(item, item.coverUrl)" />
+      <div class="desc">
+        <span>{{ item.name }}</span>
+        <img class="icon" src="/assets/icons/arrow-long-right.svg" />
+        <span>R$ {{ item.price }}</span>
+      </div>
+    </div>
+    <div *ngIf="products.length === 0" class="no-result">
+      Nenhum resultado encontrado...
+    </div>
+  </div>
+</div>
