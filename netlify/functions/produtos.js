@@ -33,7 +33,7 @@ export async function handler(_event, _context) {
         products.push(product)
     }
 
-    fs.writeFileSync('./produtos.json', JSON.stringify(products));
+    fs.writeFileSync('./produtos.json', JSON.stringify(products), 'w');
     return {
       statusCode: 200,
       body: JSON.stringify(products),
