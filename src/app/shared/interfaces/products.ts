@@ -2,8 +2,9 @@ export interface IProduct {
   id: number;
   name: string;
   price: string;
-  coverUrl: string;
-  backUrl: string;
+  mainPage: boolean;
+  description: string;
+  imgCover: string;
+  imgBack: string;
   imgUrls: string[];
-  catalogSection: boolean;
 }

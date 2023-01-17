@@ -1,6 +1,6 @@
+import { ProdutosService } from './../../produtos.service';
 import { IProduct } from './../../shared/interfaces/products';
-import { ChangeDetectionStrategy, Component } from "@angular/core";
-import produtosJSON from '../../../assets/produtos.json'
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-catalog-section",
@@ -8,10 +8,16 @@ import produtosJSON from '../../../assets/produtos.json'
   styleUrls: ["./catalog-section.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CatalogSectionComponent {
-  products: IProduct[] = produtosJSON.produtos.filter((produto) => {
-    return produto.catalogSection;
-  });
+export class CatalogSectionComponent implements OnInit {
+  products: IProduct[] = [];
+
+  constructor(private _service: ProdutosService) { }
+
+  ngOnInit() {
+    this._service.getProdutos().subscribe(res => {
+      this.products = res as IProduct[];
+    })
+  }
 
   getUrl(url: string): string {
     return `url(${url})`;

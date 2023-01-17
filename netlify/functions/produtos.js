@@ -35,6 +35,15 @@ export async function handler(event, _context) {
         products.push(product)
     }
 
+    products = products.map((item) => {
+      const mainPage = item.mainPage.toLowerCase() === 'true' ? true : false;
+      return {
+        ...item,
+        mainPage,
+        imgUrls: [item.img1, item.img2, item.img3, item.img4]
+      }
+    })
+
     if (id) {
       const product = products.find(p => p.id == id)
       return {

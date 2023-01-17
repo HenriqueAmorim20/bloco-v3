@@ -23,7 +23,7 @@
         [routerLink]="['/catalogo', item.id]"
         routerLinkActive="router-link-active"
       >
-        <img [id]="item.id" [src]="item.coverUrl" (mouseenter)="setUrl(item, item.backUrl)" (mouseleave)="setUrl(item, item.coverUrl)" />
+        <img [id]="item.id" [src]="item.imgCover" (mouseenter)="setUrl(item, item.imgBack)" (mouseleave)="setUrl(item, item.imgCover)" />
         <div class="desc">
           <span>{{ item.name }}</span>
           <img class="icon" src="/assets/icons/arrow-long-right.svg" />
