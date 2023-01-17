@@ -1,0 +1,6 @@
+flask==2.2.2
+google-auth-oauthlib==0.4.1
+gspread==3.6.0
+google-auth==2.16.0
+python-dotenv==0.13.0
+google-api-python-client==1.6.7

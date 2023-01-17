@@ -1,6 +1,6 @@
 import { IProduct } from './../../shared/interfaces/products';
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import produtosJSON from '../../../assets/produtos.json'
+import produtosJSON from '../../../assets/produtos2.json'
 
 @Component({
   selector: "app-catalog-section",
