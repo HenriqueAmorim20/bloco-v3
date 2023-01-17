@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "./functions/server.py"
   status = 200
