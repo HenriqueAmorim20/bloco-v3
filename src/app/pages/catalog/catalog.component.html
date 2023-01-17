@@ -18,13 +18,18 @@
     </div>
   </div>
   <div class="products">
-    <div class="product" *ngFor="let item of products; index as i">
-      <img [id]="item.id" [src]="item.coverUrl" (mouseenter)="setUrl(item, item.backUrl)" (mouseleave)="setUrl(item, item.coverUrl)" />
-      <div class="desc">
-        <span>{{ item.name }}</span>
-        <img class="icon" src="/assets/icons/arrow-long-right.svg" />
-        <span>R$ {{ item.price }}</span>
-      </div>
+    <div  *ngFor="let item of products; index as i">
+      <div class="product"
+        [routerLink]="['/catalogo', item.id]"
+        routerLinkActive="router-link-active"
+      >
+        <img [id]="item.id" [src]="item.coverUrl" (mouseenter)="setUrl(item, item.backUrl)" (mouseleave)="setUrl(item, item.coverUrl)" />
+        <div class="desc">
+          <span>{{ item.name }}</span>
+          <img class="icon" src="/assets/icons/arrow-long-right.svg" />
+          <span>R$ {{ item.price }}</span>
+        </div>
+    </div>
     </div>
     <div *ngIf="products.length === 0" class="no-result">
       Nenhum resultado encontrado...

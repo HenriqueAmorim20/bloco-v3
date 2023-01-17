@@ -12,6 +12,7 @@ const scopes = ['https://www.googleapis.com/auth/spreadsheets']
 const auth = new google.auth.JWT(client_email, null, private_key, scopes);
 
 export async function handler(event, _context) {
+  console.log(event);
   // const eventBody = JSON.parse(event?.body || { id: null })
   // const id = eventBody.id;
 
