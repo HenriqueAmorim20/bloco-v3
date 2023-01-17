@@ -33,7 +33,6 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.product = produtosJSON.produtos.find((item) => item.id === id);
     if (this.product) {
       this.currentSrc = this.product.imgUrls[0]
-      console.log(this.currentSrc)
     } else {
       this.router.navigate(['/catalogo']);
     }
