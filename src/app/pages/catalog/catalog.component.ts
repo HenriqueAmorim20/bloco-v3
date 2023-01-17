@@ -1,7 +1,7 @@
+import { ProdutosService } from './../../produtos.service';
 import { IProduct } from './../../shared/interfaces/products';
 import { Component, OnInit } from '@angular/core';
-import produtosJSON from '../../../assets/produtos2.json'
-import teste from '../../../../netlify/functions/produtos.json'
+import produtosJSON from '../../../assets/produtos.json'
 
 
 interface ISortOptions {
@@ -41,8 +41,10 @@ export class CatalogComponent implements OnInit {
     },
   ]
 
+  constructor(private _service: ProdutosService) {}
+
   ngOnInit(): void {
-      console.log(teste)
+    this._service.getProdutos().subscribe(res => console.log(res))
   }
 
   sortBy($event: Event) {

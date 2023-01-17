@@ -1,7 +1,6 @@
 const dotenv = require('dotenv');
 const { google } = require('googleapis');
 const sheets = google.sheets({ version: 'v4' });
-const fs = require('fs');
 
 dotenv.config();
 
@@ -12,7 +11,10 @@ const client_email = process.env.CLIENT_EMAIL;
 const scopes = ['https://www.googleapis.com/auth/spreadsheets']
 const auth = new google.auth.JWT(client_email, null, private_key, scopes);
 
-export async function handler(_event, _context) {
+export async function handler(event, context) {
+  const eventBody = JSON.parse(event.body)
+  const id = eventBody.id;
+
   try {
     const result = await sheets.spreadsheets.values.get({
         spreadsheetId: spreadsheetId,
@@ -25,7 +27,9 @@ export async function handler(_event, _context) {
     let products = []
     let headers = data[0]
     for (let i = 1; i < data.length; i++) {
-        let product = {}
+      let product = {
+          id: i
+        }
         let row = data[i]
         headers.forEach((header, index) => {
             product[header] = row[index]
@@ -33,7 +37,17 @@ export async function handler(_event, _context) {
         products.push(product)
     }
 
-    fs.writeFileSync('./produtos.json', JSON.stringify(products), 'w');
+    console.log(products)
+    console.log(id)
+
+    if (id) {
+      const product = products.find(item => item.id === id);
+      return {
+        statusCode: 200,
+        body: JSON.stringify(product),
+      }
+    }
+
     return {
       statusCode: 200,
       body: JSON.stringify(products),

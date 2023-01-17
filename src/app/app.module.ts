@@ -1,5 +1,5 @@
+import { ProdutosService } from './produtos.service';
 import { CommonModule } from '@angular/common';
-import { AppService } from './app.service';
 import { LayoutsModule } from './layouts/layouts.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppService],
+  providers: [ProdutosService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
