@@ -9,6 +9,6 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   getProdutos() {
-    return this.http.get('/api/produtos');
+    return this.http.get('/.netlify/functions/produtos');
   }
 }
