@@ -1,0 +1,15 @@
+<div class="product" *ngIf="product">
+ <div class="side-images">
+  <div class="side-image" *ngFor="let src of product.imgUrls">
+    <img *ngIf="src !== currentSrc" [src]="src" alt="product.name" (click)="currentSrc = src">
+  </div>
+ </div>
+ <div class="current-image">
+  <img [src]="currentSrc" [alt]="product.name">
+ </div>
+ <div class="desc">
+  <h1> {{ product.name }}</h1>
+  <p>desc</p>
+  <button>comprar</button>
+ </div>
+</div>
