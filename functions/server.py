@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 import os
 from dotenv import load_dotenv
 import gspread
@@ -13,12 +13,23 @@ app = Flask(__name__)
 load_dotenv()
 spreadsheetId = os.getenv("SHEET_ID")
 range = os.getenv("RANGE")
+type = os.getenv("TYPE")
+private_key_id = os.getenv("PRIVATE_KEY_ID")
+private_key = os.getenv("PRIVATE_KEY").replace('\\n', '\n')
+client_email = os.getenv("CLIENT_EMAIL")
+client_id = os.getenv("CLIENT_ID")
 
 # Configure the connection
 scope = ['https://spreadsheets.google.com/feeds']
 # Give the path to the Service Account Credential json file
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    '../credentials.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(
+    {
+        "type": type,
+        "private_key_id": private_key_id,
+        "private_key": private_key,
+        "client_email": client_email,
+        "client_id": client_id,
+    }, scope)
 # Authorise your Notebook
 gc = gspread.authorize(credentials)
 service = build('sheets', 'v4', credentials=credentials)
