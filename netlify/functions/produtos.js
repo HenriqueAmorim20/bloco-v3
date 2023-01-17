@@ -45,9 +45,14 @@ export async function handler(_event, _context) {
     }
 
     // fs.writeFileSync('produtos.json', JSON.stringify(products));
-    res.json(products)
+    return {
+      statusCode: 200,
+      body: products,
+    }
   } catch (err) {
-      console.error(err);
-      res.status(500).send('Error')
+    return {
+      statusCode: 500,
+      body: err,
+    }
   }
 }
