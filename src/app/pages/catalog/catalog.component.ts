@@ -1,7 +1,7 @@
 import { IProduct } from './../../shared/interfaces/products';
 import { Component, OnInit } from '@angular/core';
 import produtosJSON from '../../../assets/produtos2.json'
-import teste from '../../../assets/produtos.json'
+import teste from '../../../../netlify/functions/produtos.json'
 
 
 interface ISortOptions {
