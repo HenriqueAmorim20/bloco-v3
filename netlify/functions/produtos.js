@@ -35,14 +35,23 @@ export async function handler(event, _context) {
         products.push(product)
     }
 
-    // products = products.map((item) => {
-    //   const mainPage = item.mainPage.toLowerCase() === 'true' ? true : false;
-    //   return {
-    //     ...item,
-    //     mainPage,
-    //     imgUrls: [item.img1, item.img2, item.img3, item.img4]
-    //   }
-    // })
+    products = products.map((item) => {
+      const mainPage = item.mainPage.toLowerCase() === 'true' ? true : false;
+      const imgCover = mapImgUrl(item.imgCover);
+      const imgBack = mapImgUrl(item.imgBack);
+      const img1 = mapImgUrl(item.img1);
+      const img2 = mapImgUrl(item.img2);
+      const img3 = mapImgUrl(item.img3);
+      const img4 = mapImgUrl(item.img4);
+
+      return {
+        ...item,
+        mainPage,
+        imgCover,
+        imgBack,
+        imgUrls: [img1, img2, img3, img4]
+      }
+    })
 
     if (id) {
       const product = products.find(p => p.id == id)
@@ -62,4 +71,9 @@ export async function handler(event, _context) {
       body: `Erro: ${err}`,
     }
   }
+}
+
+function mapImgUrl(url) {
+  let id = url.split('/d/')[1].split('/')[0]
+  return `https://drive.google.com/uc?id=${id}`
 }
