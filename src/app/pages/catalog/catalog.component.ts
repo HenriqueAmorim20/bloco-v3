@@ -1,6 +1,7 @@
 import { IProduct } from './../../shared/interfaces/products';
 import { Component, OnInit } from '@angular/core';
 import produtosJSON from '../../../assets/produtos2.json'
+import teste from '../../../assets/produtos.json'
 
 
 interface ISortOptions {
@@ -12,7 +13,7 @@ interface ISortOptions {
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
-export class CatalogComponent {
+export class CatalogComponent implements OnInit {
   productsDefault: IProduct[] = produtosJSON.produtos;
 
   products: IProduct[] = [...this.productsDefault];
@@ -39,6 +40,10 @@ export class CatalogComponent {
       value: 4,
     },
   ]
+
+  ngOnInit(): void {
+      console.log(teste)
+  }
 
   sortBy($event: Event) {
     const target = $event.target as HTMLSelectElement;
