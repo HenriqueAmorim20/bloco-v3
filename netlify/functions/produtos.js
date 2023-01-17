@@ -12,8 +12,7 @@ const scopes = ['https://www.googleapis.com/auth/spreadsheets']
 const auth = new google.auth.JWT(client_email, null, private_key, scopes);
 
 export async function handler(event, _context) {
-  const id = event?.body?.id;
-
+  const id = event?.queryStringParameters?.id
   try {
     const result = await sheets.spreadsheets.values.get({
         spreadsheetId: spreadsheetId,
@@ -36,11 +35,8 @@ export async function handler(event, _context) {
         products.push(product)
     }
 
-    // console.log(products)
-    // console.log(id)
-
     if (id) {
-      const product = products.find(item => item.id === id);
+      const product = products.find(p => p.id == id)
       return {
         statusCode: 200,
         body: JSON.stringify(product),

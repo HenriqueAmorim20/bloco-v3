@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, take } from 'rxjs';
 
 @Injectable({
@@ -16,7 +16,8 @@ export class ProdutosService {
   }
 
   getProdutoById(id: number) {
-    return this.http.post('/.netlify/functions/produtos', { id }).pipe(map((res) => {
+    const params = new HttpParams().set('id', id);
+    return this.http.get('/.netlify/functions/produtos', { params }).pipe(map((res) => {
       return res;
     }), take(1));
   }
