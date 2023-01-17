@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/api/*"
-  to = "./functions/server.py"
+  to = "functions/server"
   status = 200
