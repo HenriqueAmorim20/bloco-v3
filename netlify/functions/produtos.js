@@ -12,8 +12,8 @@ const scopes = ['https://www.googleapis.com/auth/spreadsheets']
 const auth = new google.auth.JWT(client_email, null, private_key, scopes);
 
 export async function handler(event, _context) {
-  const eventBody = JSON.parse(event?.body || { id: null })
-  const id = eventBody.id;
+  // const eventBody = JSON.parse(event?.body || { id: null })
+  // const id = eventBody.id;
 
   try {
     const result = await sheets.spreadsheets.values.get({
@@ -37,16 +37,16 @@ export async function handler(event, _context) {
         products.push(product)
     }
 
-    console.log(products)
-    console.log(id)
+    // console.log(products)
+    // console.log(id)
 
-    if (id) {
-      const product = products.find(item => item.id === id);
-      return {
-        statusCode: 200,
-        body: JSON.stringify(product),
-      }
-    }
+    // if (id) {
+    //   const product = products.find(item => item.id === id);
+    //   return {
+    //     statusCode: 200,
+    //     body: JSON.stringify(product),
+    //   }
+    // }
 
     return {
       statusCode: 200,
