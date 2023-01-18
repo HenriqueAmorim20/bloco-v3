@@ -2,7 +2,9 @@
   <h1>CATÁLOGO</h1>
   <div class="products">
     <div class="product" *ngFor="let item of products; index as i">
-      <div class="img" [style.background]="getUrl(item.imgCover)"></div>
+      <div class="img">
+        <img [src]="item.imgCover" [alt]="item.name">
+      </div>
       <div class="desc">
         <span>{{ item.name }}</span>
         <img class="icon" src="/assets/icons/arrow-long-right.svg" />

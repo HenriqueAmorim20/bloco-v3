@@ -74,6 +74,5 @@ export async function handler(event, _context) {
 }
 
 function mapImgUrl(url) {
-  let id = url.split('/d/')[1].split('/')[0]
-  return `https://drive.google.com/uc?id=${id}`
+  return url.replace('file/d/', 'uc?id=').split('/view')[0]
 }

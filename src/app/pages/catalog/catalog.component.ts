@@ -1,7 +1,7 @@
 import { ProdutosService } from './../../produtos.service';
 import { IProduct } from './../../shared/interfaces/products';
 import { Component, OnInit } from '@angular/core';
-
+import produtosJSON from '../../../assets/produtos.json'
 
 interface ISortOptions {
   label: string;
@@ -13,9 +13,9 @@ interface ISortOptions {
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  productsDefault: IProduct[] = [];
+  productsDefault: IProduct[] = produtosJSON;
 
-  products: IProduct[] = [];
+  products: IProduct[] = [...this.productsDefault];
 
   sortOptions: ISortOptions[] = [
     {
